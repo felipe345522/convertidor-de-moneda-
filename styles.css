@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #333;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header p {
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.converter-container {
+  padding: 25px;
+}
+
+.amount-section,
+.from-section,
+.to-section,
+.result-section {
+  margin-bottom: 25px;
+}
+
+.section-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+  font-size: 1rem;
+}
+
+.amount-input {
+  width: 100%;
+  padding: 18px 15px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2575fc;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.amount-input:focus {
+  border-color: #6a11cb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+}
+
+.currency-selector {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.currency-selector:focus-within {
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+}
+
+.currency-flag {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  padding: 0 10px;
+}
+
+.currency-code {
+  min-width: 80px;
+  padding: 15px;
+  font-weight: 600;
+  background-color: #f5f7ff;
+  border-right: 2px solid #ddd;
+  color: #2575fc;
+}
+
+.currency-select {
+  flex: 1;
+  border: none;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.swap-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.swap-button {
+  background-color: #6a11cb;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+}
+
+.swap-button:hover {
+  background-color: #2575fc;
+  transform: rotate(180deg);
+}
+
+.result-box {
+  background: linear-gradient(to right, #f5f7ff, #eef1ff);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  border: 2px solid #e1e6ff;
+}
+
+.result-label {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.result-amount {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2575fc;
+  margin-bottom: 5px;
+}
+
+.result-details {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.rate-info {
+  background-color: #f0f7ff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #444;
+  text-align: center;
+  border-left: 4px solid #2575fc;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.action-button {
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.convert-button {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+}
+
+.convert-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(106, 17, 203, 0.3);
+}
+
+.reset-button {
+  background-color: #f0f0f0;
+  color: #555;
+}
+
+.reset-button:hover {
+  background-color: #e0e0e0;
+}
+
+.favorites-section {
+  margin-top: 30px;
+}
+
+.favorites-title {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.favorite-item {
+  background-color: white;
+  border: 1px solid #e1e6ff;
+  border-radius: 10px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.favorite-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+  border-color: #2575fc;
+}
+
+.favorite-flag {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.favorite-code {
+  font-weight: 600;
+  color: #2575fc;
+  margin-bottom: 3px;
+}
+
+.favorite-rate {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.last-update {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* Responsividad mejorada */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 600px;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+  .result-amount {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  .container {
+    max-width: 100%;
+    border-radius: 15px;
+  }
+  .header {
+    padding: 20px 15px;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  .converter-container {
+    padding: 20px 15px;
+  }
+  .amount-input {
+    font-size: 1.2rem;
+    padding: 15px 12px;
+  }
+  .currency-code {
+    min-width: 60px;
+    padding: 12px;
+  }
+  .currency-select {
+    padding: 12px;
+  }
+  .result-amount {
+    font-size: 1.8rem;
+  }
+  .buttons-container {
+    grid-template-columns: 1fr;
+  }
+  .favorites-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    border-radius: 15px;
+  }
+  .header {
+    padding: 20px 15px;
+  }
+  .converter-container {
+    padding: 20px 15px;
+  }
+  .result-amount {
+    font-size: 1.8rem;
+  }
+  .favorites-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Divisas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1><i class="fas fa-exchange-alt"></i> Conversor de Divisas</h1>
+        <p>Conversor en tiempo real con tasas de cambio actualizadas</p>
+      </div>
+
+      <div class="converter-container">
+        <div class="amount-section">
+          <label class="section-label">Cantidad a convertir</label>
+          <input
+            type="number"
+            class="amount-input"
+            id="amount"
+            value="1"
+            min="0"
+            step="0.01"
+          />
+        </div>
+
+        <div class="from-section">
+          <label class="section-label">De</label>
+          <div class="currency-selector">
+            <div class="currency-flag" id="from-flag">🇺🇸</div>
+            <div class="currency-code" id="from-code">USD</div>
+            <select class="currency-select" id="from-currency">
+              <option value="USD">Dólar Estadounidense (USD)</option>
+              <option value="EUR">Euro (EUR)</option>
+              <option value="GBP">Libra Esterlina (GBP)</option>
+              <option value="JPY">Yen Japonés (JPY)</option>
+              <option value="CAD">Dólar Canadiense (CAD)</option>
+              <option value="AUD">Dólar Australiano (AUD)</option>
+              <option value="CHF">Franco Suizo (CHF)</option>
+              <option value="CNY">Yuan Chino (CNY)</option>
+              <option value="MXN">Peso Mexicano (MXN)</option>
+              <option value="BRL">Real Brasileño (BRL)</option>
+              <option value="ARS">Peso Argentino (ARS)</option>
+              <option value="COP">Peso Colombiano (COP)</option>
+              <option value="CLP">Peso Chileno (CLP)</option>
+              <option value="PEN">Sol Peruano (PEN)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="swap-button-container">
+          <button class="swap-button" id="swap-button">
+            <i class="fas fa-exchange-alt"></i>
+          </button>
+        </div>
+
+        <div class="to-section">
+          <label class="section-label">A</label>
+          <div class="currency-selector">
+            <div class="currency-flag" id="to-flag">🇪🇺</div>
+            <div class="currency-code" id="to-code">EUR</div>
+            <select class="currency-select" id="to-currency">
+              <option value="EUR">Euro (EUR)</option>
+              <option value="USD">Dólar Estadounidense (USD)</option>
+              <option value="GBP">Libra Esterlina (GBP)</option>
+              <option value="JPY">Yen Japonés (JPY)</option>
+              <option value="CAD">Dólar Canadiense (CAD)</option>
+              <option value="AUD">Dólar Australiano (AUD)</option>
+              <option value="CHF">Franco Suizo (CHF)</option>
+              <option value="CNY">Yuan Chino (CNY)</option>
+              <option value="MXN">Peso Mexicano (MXN)</option>
+              <option value="BRL">Real Brasileño (BRL)</option>
+              <option value="ARS">Peso Argentino (ARS)</option>
+              <option value="COP">Peso Colombiano (COP)</option>
+              <option value="CLP">Peso Chileno (CLP)</option>
+              <option value="PEN">Sol Peruano (PEN)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="result-section">
+          <div class="result-box">
+            <div class="result-label">Total convertido</div>
+            <div class="result-amount" id="result">92.50 €</div>
+            <div class="result-details" id="conversion-details">
+              100 USD = 92.50 EUR
+            </div>
+          </div>
+
+          <div class="rate-info" id="rate-info">
+            1 USD = 0.9250 EUR | 1 EUR = 1.0811 USD
+          </div>
+        </div>
+
+        <div class="buttons-container">
+          <button class="action-button convert-button" id="convert-button">
+            <i class="fas fa-calculator"></i> Convertir
+          </button>
+          <button class="action-button reset-button" id="reset-button">
+            <i class="fas fa-redo"></i> Reiniciar
+          </button>
+        </div>
+
+        <div class="favorites-section">
+          <div class="favorites-title">
+            <i class="fas fa-star"></i> Conversiones frecuentes
+          </div>
+          <div class="favorites-grid" id="favorites-grid">
+            <!-- Las conversiones favoritas se cargarán aquí con JavaScript -->
+          </div>
+        </div>
+
+        <div class="footer">
+          <div>Tipos de cambio actualizados diariamente</div>
+          <div class="last-update" id="last-update">
+            Última actualización: Hoy a las 14:30
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
